@@ -16,7 +16,7 @@ let data = JSON.parse(rawdata);
 
 //VARIABLES AND DUMMY DB
 var transactions = [];
-var purchases = [0,0,0,0]
+var purchases = [0, 0, 0, 0]
 
 
 
@@ -56,6 +56,13 @@ app.get("/pconfirm", function(req,res) {
     purchases: purchases
   });
 });
+app.get("/profile", function(req,res) {
+  res.render("profile", {
+    cellphones: data,
+    purchases: "purchases"
+  });
+});
+
 
 //POST REQUESTS HANDLING
 app.post("/buyCellphone", function(req,res){
