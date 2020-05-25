@@ -17,7 +17,12 @@ let data = JSON.parse(rawdata);
 //VARIABLES AND DUMMY DB
 var transactions = [];
 var purchases = [0, 0, 0, 0]
-
+var user = {
+  username: 'vladi'
+  , password: '123456',
+  name: 'vladi'
+  
+}
 
 
 //TESTING CODE
@@ -59,7 +64,9 @@ app.get("/pconfirm", function(req,res) {
 app.get("/profile", function(req,res) {
   res.render("profile", {
     cellphones: data,
-    purchases: "purchases"
+    purchases: "purchases",
+    user:user,
+    
   });
 });
 
